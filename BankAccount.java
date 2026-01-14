@@ -1,4 +1,5 @@
 public class BankAccount {
+
     private String AccountNumber;
     private String AccountType;
     private double Balance;
@@ -17,7 +18,8 @@ public class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             Balance += amount;
-            System.out.println("Deposited successfully!");
+            System.out.println(amount + " " + "has been deposited successfully!");
+            System.out.println("Your balance is " + " " + Balance);
         } else {
             System.out.println("Deposit unsuccessful");
         }
@@ -26,7 +28,8 @@ public class BankAccount {
     public void withdrawal(double amount) {
         if (amount > 0 && amount <= Balance) {
             Balance -= amount;
-            System.out.println("Withdrawal successful!");
+            System.out.println(amount + " " + "has been withdrawn successfully");
+            System.out.println("Your balance is " + " " + Balance);
         } else {
             System.out.println("Withdrawal unsuccessful. Insufficient Balance");
         }
@@ -34,7 +37,7 @@ public class BankAccount {
 
     public void checkBalance(int pin) {
         if (pin == Pin) {
-            System.out.println(Balance);
+            System.out.println("Your balance is " + " " + Balance);
         } else {
             System.out.println("Incorrect Pin!");
         }
@@ -71,7 +74,10 @@ public class BankAccount {
     }
 
     public static void main(String[] args) {
-
+        System.out.println("BANK ACCOUNT DETAILS");
+        BankAccount acc1 = new BankAccount("123", "Student", 123.90, "Active", 1234);
+        acc1.checkBalance(1234);
+        ;
     }
 
 }
